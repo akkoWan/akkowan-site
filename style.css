@@ -49,7 +49,7 @@ a { color: var(--navy); }
 .nb { display: inline-block; }
 .hero .catch { display: inline-block; background: var(--navy); color: var(--yellow); padding: 4px 14px; border-radius: 999px; font-weight: 800; margin-bottom: 16px; }
 .hero p.lead { font-size: 17px; margin: 0 0 24px; }
-.hero-logo { width: min(320px, 80%); justify-self: center; filter: drop-shadow(0 8px 0 rgba(31,42,90,.15)); }
+.hero-logo { width: min(440px, 100%); justify-self: center; }
 
 .btn {
   display: inline-block; text-decoration: none; font-weight: 800;
@@ -135,11 +135,30 @@ section { padding: 56px 0; }
   padding: 16px 20px; margin: 16px 0;
 }
 
+/* お問い合わせフォーム枠 */
+.form-frame {
+  background: var(--white); border: 3px solid var(--navy); border-radius: var(--radius);
+  padding: 16px; min-height: 160px;
+}
+.form-frame iframe { display: block; border: 0; }
+
+/* コラム一覧 */
+.column-list { display: grid; gap: 16px; margin-top: 24px; }
+.column-item {
+  display: block; text-decoration: none; background: var(--white);
+  border: 3px solid var(--navy); border-radius: var(--radius); padding: 18px 20px;
+  box-shadow: var(--shadow); transition: transform .1s, box-shadow .1s;
+}
+.column-item:hover { transform: translateY(2px); box-shadow: 0 4px 0 var(--navy); }
+.column-item h2 { margin: 0 0 6px; padding: 0; background: none; border: 0; font-size: 18px; }
+.column-item p { margin: 0; font-size: 15px; color: var(--navy-soft); }
+.doc ul, .doc ol { padding-left: 1.4em; }
+
 /* スマホ */
 @media (max-width: 760px) {
   .hero { padding: 32px 0 48px; }
   .hero .wrap { grid-template-columns: 1fr; text-align: center; }
-  .hero-logo { width: 200px; order: -1; }
+  .hero-logo { width: 280px; order: -1; }
   .features { grid-template-columns: 1fr; }
   .nav { gap: 12px; font-size: 13px; }
   .brand span { display: none; }
