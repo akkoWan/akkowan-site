@@ -154,6 +154,32 @@ section { padding: 56px 0; }
 .column-item p { margin: 0; font-size: 15px; color: var(--navy-soft); }
 .doc ul, .doc ol { padding-left: 1.4em; }
 
+/* アフィリエイト商品カード */
+.pr-card {
+  position: relative; display: flex; gap: 16px; align-items: center;
+  background: var(--white); border: 2px solid var(--navy); border-radius: 16px;
+  padding: 16px; margin: 16px 0 24px;
+}
+.pr-label {
+  position: absolute; top: -11px; left: 14px; background: var(--navy); color: var(--yellow);
+  font-size: 12px; font-weight: 800; padding: 1px 10px; border-radius: 999px; letter-spacing: .05em;
+}
+.pr-card-img { flex: 0 0 auto; }
+.pr-card-img img { display: block; width: 140px; height: 140px; object-fit: contain; border-radius: 10px; }
+.pr-card-body { flex: 1 1 auto; min-width: 0; }
+.pr-card-title { display: block; font-weight: 800; font-size: 15px; line-height: 1.6; text-decoration: none; }
+.pr-card-title:hover { text-decoration: underline; }
+.pr-card-note { margin: 4px 0 10px; font-size: 13px; color: var(--navy-soft); }
+.pr-card-btn {
+  display: inline-block; background: #BF0000; color: #fff; text-decoration: none; font-weight: 800;
+  font-size: 14px; padding: 8px 18px; border-radius: 999px;
+}
+.pr-card-btn:hover { opacity: .85; }
+@media (max-width: 480px) {
+  .pr-card { flex-direction: column; text-align: center; }
+  .pr-card-img img { width: 150px; height: 150px; }
+}
+
 /* スマホ */
 @media (max-width: 760px) {
   .hero { padding: 32px 0 48px; }
