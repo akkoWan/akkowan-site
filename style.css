@@ -154,30 +154,39 @@ section { padding: 56px 0; }
 .column-item p { margin: 0; font-size: 15px; color: var(--navy-soft); }
 .doc ul, .doc ol { padding-left: 1.4em; }
 
-/* アフィリエイト商品カード */
+/* アフィリエイト商品カード
+   中の広告コード（もしもアフィリエイト）は変更禁止のため、見た目は外側の枠とCSSだけで整える */
 .pr-card {
-  position: relative; display: flex; gap: 16px; align-items: center;
-  background: var(--white); border: 2px solid var(--navy); border-radius: 16px;
-  padding: 16px; margin: 16px 0 24px;
+  position: relative; background: var(--white); border: 2px solid var(--navy); border-radius: 16px;
+  padding: 18px 16px 16px; margin: 16px 0 24px; overflow: hidden;
 }
 .pr-label {
-  position: absolute; top: -11px; left: 14px; background: var(--navy); color: var(--yellow);
-  font-size: 12px; font-weight: 800; padding: 1px 10px; border-radius: 999px; letter-spacing: .05em;
+  position: absolute; top: 0; left: 14px; background: var(--navy); color: var(--yellow);
+  font-size: 12px; font-weight: 800; padding: 1px 10px; border-radius: 0 0 10px 10px; letter-spacing: .05em;
 }
-.pr-card-img { flex: 0 0 auto; }
-.pr-card-img img { display: block; width: 140px; height: 140px; object-fit: contain; border-radius: 10px; }
-.pr-card-body { flex: 1 1 auto; min-width: 0; }
-.pr-card-title { display: block; font-weight: 800; font-size: 15px; line-height: 1.6; text-decoration: none; }
-.pr-card-title:hover { text-decoration: underline; }
-.pr-card-note { margin: 4px 0 10px; font-size: 13px; color: var(--navy-soft); }
-.pr-card-btn {
-  display: inline-block; background: #BF0000; color: #fff; text-decoration: none; font-weight: 800;
-  font-size: 14px; padding: 8px 18px; border-radius: 999px;
+.pr-card > a {
+  display: block; color: var(--navy); font-size: 14px; font-weight: 700; line-height: 1.7; text-decoration: none;
 }
-.pr-card-btn:hover { opacity: .85; }
+.pr-card > a:hover { text-decoration: underline; }
+.pr-card > a img { float: left; width: 120px; height: 120px; object-fit: contain; margin: 4px 16px 4px 0; border-radius: 10px; }
+.pr-card > a br { display: none; }
+.pr-card > img { position: absolute; }
 @media (max-width: 480px) {
-  .pr-card { flex-direction: column; text-align: center; }
-  .pr-card-img img { width: 150px; height: 150px; }
+  .pr-card > a img { float: none; display: block; margin: 6px auto 10px; width: 140px; height: 140px; }
+}
+
+.pr-card--image { display: flex; gap: 16px; align-items: center; }
+.pr-card-ad { flex: 0 0 auto; line-height: 0; }
+.pr-card-ad > a img { width: 120px; height: 120px; object-fit: contain; border-radius: 10px; }
+.pr-card-ad > img { position: absolute; }
+.pr-card-text { flex: 1 1 auto; min-width: 0; }
+.pr-card-text p { margin: 0; }
+.pr-card-name { font-weight: 800; font-size: 15px; line-height: 1.6; }
+.pr-card-desc { margin-top: 4px !important; font-size: 13px; color: var(--navy-soft); }
+.pr-card-hint { margin-top: 8px !important; font-size: 12px; color: var(--navy-soft); }
+@media (max-width: 480px) {
+  .pr-card--image { flex-direction: column; text-align: center; gap: 10px; }
+  .pr-card-ad > a img { width: 140px; height: 140px; }
 }
 
 /* スマホ */
