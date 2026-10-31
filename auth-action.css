@@ -1,0 +1,112 @@
+/* あっこワン！のデザイン（黄色×ネイビーのポップな絵本風）。アプリのデザインキットの色に合わせてある。 */
+:root {
+  --navy: #1d2846;
+  --yellow: #ffcf3a;
+  --orange: #ff7a1a;
+  --cream: #fff8e6;
+  --white: #ffffff;
+  --muted: #4a5470;
+  --red: #e5484d;
+  --green: #2f9e5b;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 16px 32px;
+  background: var(--cream);
+  color: var(--navy);
+  font-family: "Hiragino Maru Gothic ProN", "Hiragino Sans", "Yu Gothic UI", "Yu Gothic",
+    "Meiryo", "Noto Sans JP", sans-serif;
+  line-height: 1.7;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 20px;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.brand__paw { font-size: 1.6rem; }
+
+.card {
+  width: 100%;
+  max-width: 480px;
+  padding: 28px 24px;
+  background: var(--white);
+  border: 3px solid var(--navy);
+  border-radius: 24px;
+  box-shadow: 6px 6px 0 var(--navy);
+  text-align: center;
+}
+
+.card__icon { font-size: 2.6rem; line-height: 1; }
+
+.card__title {
+  margin: 12px 0 8px;
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.card__body p {
+  margin: 8px 0;
+  text-align: left;
+}
+
+.card--success { border-color: var(--navy); }
+.card--success .card__title { color: var(--navy); }
+.card--error .card__title { color: var(--red); }
+
+.card__extra { margin-top: 16px; }
+
+.note { color: var(--muted); font-size: 0.9rem; }
+
+/* パスワードの再設定のフォーム */
+.form { display: grid; gap: 12px; text-align: left; }
+.form label { font-weight: 700; font-size: 0.95rem; }
+.form input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 1rem;
+  color: var(--navy);
+  background: var(--white);
+  border: 2px solid var(--navy);
+  border-radius: 12px;
+}
+.form input:focus { outline: 3px solid var(--yellow); }
+
+.button {
+  display: inline-block;
+  min-height: 48px;
+  padding: 12px 22px;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--navy);
+  background: var(--yellow);
+  border: 2px solid var(--navy);
+  border-radius: 14px;
+  box-shadow: 3px 3px 0 var(--navy);
+  cursor: pointer;
+}
+.button:disabled { opacity: 0.5; cursor: default; }
+
+.error-text { color: var(--red); font-size: 0.9rem; text-align: left; }
+
+.footer {
+  margin-top: 28px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+.footer a { color: var(--muted); }
+
+.noscript { max-width: 480px; color: var(--red); text-align: center; }

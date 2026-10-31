@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>メールのご確認｜あっこワン！</title>
+  <!-- メールのリンクから開く専用のページ。検索には出さない。リンクの中の確認コードが、他のサイトへ漏れないようにする。 -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <!--
+    読み込めるものを、このサイトと、Firebase（Googleの公式の配信元・通信先）だけに絞る。
+    script-src の https://www.gstatic.com は、Firebase の部品の配信元。
+    connect-src の https://*.googleapis.com は、Firebase Authentication への通信。
+  -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; script-src 'self' https://www.gstatic.com; style-src 'self'; img-src 'self' data:; connect-src https://*.googleapis.com; base-uri 'none'; form-action 'none'">
+  <link rel="stylesheet" href="auth-action.css">
+</head>
+<body>
+  <header class="brand">
+    <span class="brand__paw" aria-hidden="true">🐾</span>
+    <span class="brand__name">あっこワン！</span>
+  </header>
+
+  <main class="card" id="card" aria-live="polite">
+    <div class="card__icon" id="icon" aria-hidden="true">🐾</div>
+    <h1 class="card__title" id="title">確認しています…</h1>
+    <div class="card__body" id="body"></div>
+    <div class="card__extra" id="extra"></div>
+  </main>
+
+  <noscript>
+    <p class="noscript">このページを表示するには、JavaScriptを有効にしてください。</p>
+  </noscript>
+
+  <footer class="footer">
+    <a href="/">あっこワン！の公式サイト</a>
+    <span aria-hidden="true">・</span>
+    <a href="/contact.html">お問い合わせ</a>
+    <span aria-hidden="true">・</span>
+    <a href="/privacy.html">プライバシーポリシー</a>
+  </footer>
+
+  <script type="module" src="auth-action.js"></script>
+</body>
+</html>
