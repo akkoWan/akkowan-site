@@ -4,9 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>メールのご確認｜あっこワン！</title>
-  <!-- メールのリンクから開く専用のページ。検索には出さない。リンクの中の確認コードが、他のサイトへ漏れないようにする。 -->
+  <!--
+    メールのリンクから開く専用のページ。検索には出さない。
+    リファラー（どのページから来たかの情報）は、他のサイトへは、サイトの名前（https://akkowan.jp）だけを送る。
+    確認コードの付いたURL全体は、送らない（確認コードは、読み取った直後に、URLからも消している）。
+    ※「no-referrer」にしないこと。Firebase の API キーに「ウェブサイトの制限（HTTPリファラー）」をかけている場合、
+      リファラーが空だと、Firebase への通信が拒否されて、このページが動かなくなる。
+  -->
   <meta name="robots" content="noindex, nofollow">
-  <meta name="referrer" content="no-referrer">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <!--
     読み込めるものを、このサイトと、Firebase（Googleの公式の配信元・通信先）だけに絞る。
     script-src の https://www.gstatic.com は、Firebase の部品の配信元。
