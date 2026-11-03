@@ -80,8 +80,8 @@ async function handleVerifyEmail(auth, oobCode) {
   try {
     await applyActionCode(auth, oobCode);
     render("success", "メールアドレスの確認が完了しました", [
-      "あっこワン！のアプリに戻って、設定の「アカウントとわんこ」で「確認しました」を押してください。",
-      "アプリを開き直したときにも、自動で反映されます。",
+      "あっこワン！のアプリに戻ってください。",
+      "サインアウトされている場合は、もう一度、サインインしてください（家族グループや散歩の記録は、そのまま残っています）。",
     ]);
   } catch (error) {
     renderLinkError(error, RESEND_HINT);
