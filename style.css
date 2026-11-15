@@ -189,6 +189,16 @@ section { padding: 56px 0; }
   .pr-card-ad > a img { width: 140px; height: 140px; }
 }
 
+/* バナー広告（320×100、300×250、468×60 など）。中の広告コードは変更せず、外側のクラスで並びだけ整える。
+   バナー本来の大きさで表示し、枠より大きいときだけ枠の幅に縮める */
+.pr-card.pr-card--banner > a img {
+  float: none; display: block; width: auto; max-width: 100%; height: auto;
+  object-fit: contain; margin: 10px auto 0; border-radius: 6px;
+}
+@media (max-width: 480px) {
+  .pr-card.pr-card--banner > a img { width: auto; max-width: 100%; height: auto; margin: 10px auto 0; }
+}
+
 /* スマホ */
 @media (max-width: 760px) {
   .hero { padding: 32px 0 48px; }
